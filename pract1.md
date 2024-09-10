@@ -4,7 +4,7 @@
 ## Задача 1
 ```cut -d: -f1 /etc/passwd |sort```
 
-
+![image](picturies/pictur1.png)
 
 ## Задача 2
 ```awk '{print $2, $1}' /etc/protocols | sort -k1,1nr | head -n 5```
