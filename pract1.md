@@ -9,7 +9,7 @@
 ## Задача 2
 ```awk '{print $2, $1}' /etc/protocols | sort -k1,1nr | head -n 5```
 
-
+![image](picturies/pictur2.png)
 
 ## Задача 3
 ```
