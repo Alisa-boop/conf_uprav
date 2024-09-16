@@ -15,37 +15,39 @@
 ```
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
-    echo "Использование: $0 \"Ваш текст\""
-    exit 1
-fi
-
-text="$1"
-
+text=$*
 length=${#text}
 
-border=$(printf "%0.s-" $(seq 1 $((length + 2))))
+for i in $(seq 1 $((length + 2))); do
+    line+="-"
+done
 
-border="+$border+"
-
-echo "$border"
-echo "| $text |"
-echo "$border"
+echo "+${line}+"
+echo "| ${text} |"
+echo "+${line}+"
 ```            
 
-
+![image](picturies/pictur3.png)
 
 ## Задача 4
 ```
-grep -oE '\b[a-zA-Z_][a-zA-Z0-9_]*\b' test.c | grep -vE '\b(int|void|return|if|else|for|while|include|stdio)\b' | sort | uniq
+#!/bin/bash
+
+file="$1"
+
+id=$(grep -o -E '\b[a-zA-Z]*\b' "$file" | sort -u)
 ```
 
 
 
 ## Задача 5
-```
-chmod +x reg
-sudo cp $1 /usr/local/bin
+```#!/bin/bash
+
+file=$1
+
+chmod 755 "./$file"
+
+sudo cp "$file" /usr/local/bin/
 ```
 
 
